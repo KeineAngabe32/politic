@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.party {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cdu {
+    background-color: black;
+    color: white;
+}
+
+.spd {
+    background-color: red;
+    color: white;
+}
+
+.greens {
+    background-color: green;
+    color: white;
+}
+
+.fdp {
+    background-color: blue;
+    color: white;
+}
+
+.afd {
+    background-color: yellow;
+    color: black;
+}
