@@ -1,18 +1,24 @@
-// This is where you could incorporate actual data retrieval and processing logic.
-// For this example, we'll just simulate updating the results periodically.
-
 function updateResults() {
-    const parties = ['cdu', 'spd', 'greens', 'fdp', 'afd'];
+    const parties = [
+        { name: 'cdu', likelihood: 0.35 },
+        { name: 'spd', likelihood: 0.15 },
+        { name: 'greens', likelihood: 0.20 },
+        { name: 'fdp', likelihood: 0.10 },
+        { name: 'afd', likelihood: 0.20 }
+    ];
 
-    parties.forEach(party => {
-        const element = document.querySelector(`.${party}`);
-        const randomPercentage = Math.floor(Math.random() * 100);
-        element.textContent = `${party.toUpperCase()} - ${randomPercentage}%`;
+    parties.forEach(partyObj => {
+        const element = document.querySelector(`.${partyObj.name}`);
+        const randomPercentage = generateRandomPercentage(partyObj.likelihood);
+        element.textContent = `${partyObj.name.toUpperCase()} - ${randomPercentage}%`;
     });
 }
 
-// Simulate updating results every 5 seconds
-setInterval(updateResults, 5000);
+function generateRandomPercentage(likelihood) {
+    const maxPercentage = 50; // Maximum percentage to generate
+    const threshold = Math.random() * maxPercentage * likelihood;
+    return Math.floor(Math.random() * threshold + (1 - likelihood) * maxPercentage);
+}
 
-// Initial update
+setInterval(updateResults, 5000);
 updateResults();
